@@ -1,0 +1,7 @@
+
+# dependencies
+/node_modules
+
+# misc
+ config/config.env
+
