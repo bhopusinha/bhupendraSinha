@@ -4,9 +4,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const fileUpload = require('express-fileupload');
 const path = require('path');
-const cors = require('cors');
 
-app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
@@ -21,6 +19,9 @@ const errorHandler = require('./middleware/error');
 require('dotenv').config({ path: 'config/config.env' });
 
 
+app.get('/', (req, res) => {
+    res.send('Hello from the root route!');
+});
 // routers
 const product = require('./routes/productRoutes');
 const user = require('./routes/userRoutes');
